@@ -9,17 +9,17 @@ public class DoorInteractable : XRBaseInteractable
     protected override void Awake()
     {
         base.Awake();
-        onSelectEntered.AddListener(Grab);
+        selectEntered.AddListener(Grab);
     }
 
-    private void Grab(XRBaseInteractor interactor)
+    private void Grab(SelectEnterEventArgs args)
     {
-        transform.position = new Vector3(0, interactor.transform.position.y, 0);
+        transform.position = new Vector3(0, args.interactor.transform.position.y, 0);
     }
 
     protected override void OnDestroy()
     {
-        onSelectEntered.RemoveListener(Grab);
+        selectEntered.RemoveListener(Grab);
     }
 
 }

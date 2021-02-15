@@ -8,20 +8,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 /// </summary>
 public class XRGrabChildToInteractor : XRGrabInteractable
 {
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-    //}
-
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        transform.SetParent(interactor.transform);
-        base.OnSelectEntered(interactor);
+        base.OnSelectEntered(args);
+        transform.SetParent(args.interactor.transform);
     }
+
+    //protected override void OnSelectExiting(SelectExitEventArgs args)
+    //{
+    //    base.OnSelectExited(args);
+    //    transform.SetParent(null);
+    //}
 
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
-        transform.SetParent(null);
         base.OnSelectExited(interactor);
+        transform.SetParent(null);
     }
 }
