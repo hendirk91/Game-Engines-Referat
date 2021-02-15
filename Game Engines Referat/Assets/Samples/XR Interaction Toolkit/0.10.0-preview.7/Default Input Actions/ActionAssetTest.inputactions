@@ -1,0 +1,39 @@
+{
+    "name": "ActionAssetTest",
+    "maps": [
+        {
+            "name": "KeyBoardInputTest",
+            "id": "fd55974c-e6b0-4e10-9df9-419e83b26e65",
+            "actions": [
+                {
+                    "name": "MenuDebugger",
+                    "type": "Button",
+                    "id": "bec5502f-fac9-42dd-b825-15fa838560d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "746b90e7-eafe-45b0-a437-62b4fdf65d69",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Use",
+                    "action": "MenuDebugger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "General Use",
+            "bindingGroup": "General Use",
+            "devices": []
+        }
+    ]
+}
