@@ -14,15 +14,15 @@ public class XRGrabChildToInteractor : XRGrabInteractable
         transform.SetParent(args.interactor.transform);
     }
 
-    //protected override void OnSelectExiting(SelectExitEventArgs args)
-    //{
-    //    base.OnSelectExited(args);
-    //    transform.SetParent(null);
-    //}
-
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         base.OnSelectExited(interactor);
         transform.SetParent(null);
     }
+
+    //protected override void OnSelectExiting(SelectExitEventArgs args)
+    //{
+    //    base.OnSelectExited(args);
+    //    transform.SetParent(null);
+    //}
 }
