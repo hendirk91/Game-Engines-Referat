@@ -8,8 +8,9 @@ public class ActionInputTest : MonoBehaviour
 {
     [Space][Header("Input Action Reference")]   [SerializeField] InputActionReference debugActionReference;
     [Space][Header("Input Action")]             [SerializeField] InputAction debugAction;
+
+    // Hat Editor Option um zwischen ActionReference und Action zu wählen
     [Space][Header("Input Action Property")]    [SerializeField] InputActionProperty debugActionProperty;
-    [Space][Header("Input Action Asset")]       [SerializeField] InputActionAsset debugActionAsset;
 
     
 
@@ -20,11 +21,10 @@ public class ActionInputTest : MonoBehaviour
         debugAction.started += DebugOnAction;
 
         // Using Lambda Expressions
-        debugActionProperty.action.performed += context => Debug.Log(context.ReadValue<Vector2>());
-        debugActionProperty.action.canceled += context => Debug.Log("CANCELED: Player Stopped Moving!");
+        debugActionProperty.action.started += context => Debug.Log("Player Pressed Key:" + context.control.name);
 
-        //debugActionAsset.FindAction("KeyBoardInputTest/MenuDebugger").started 
-        //    += context => Debug.Log("Action found in Asset, pressed: " + context.control.name);
+        //debugActionProperty.action.performed += context => Debug.Log(context.ReadValue<Vector2>());
+        //debugActionProperty.action.canceled += context => Debug.Log("CANCELED: Player Stopped Moving!");
     }
 
     private void DebugOnAction(InputAction.CallbackContext ctx) 
